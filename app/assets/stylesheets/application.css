@@ -1,0 +1,65 @@
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+a:hover {
+    background-color: #2980b9;
+}
+
+table {
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Página Adicionar Pessoa */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+  
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+  
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form input[type="submit"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+form input[type="submit"] {
+    background-color: white;
+    color: #3498db;
+    cursor: pointer;
+}
+  
+form input[type="submit"]:hover {
+    background-color: #2980b9;
+    color: white;
+}

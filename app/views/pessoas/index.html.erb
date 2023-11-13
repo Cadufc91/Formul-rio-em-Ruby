@@ -1,0 +1,26 @@
+<!-- app/views/pessoas/index.html.erb -->
+<h1>Listagem de Pessoas</h1>
+
+<%= link_to "Adicionar Pessoa", new_pessoa_path, class: "adicionar-pessoa-btn" %>
+
+<!-- Tabela para listar as pessoas -->
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Idade</th>
+      <th>Arquivo Anexado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pessoas.each do |pessoa| %>
+      <tr>
+        <td><%= pessoa.nome %></td>
+        <td><%= pessoa.sobrenome %></td>
+        <td><%= pessoa.idade %></td>
+        <td><%= pessoa.tem_arquivo ? 'Sim' : 'Não' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

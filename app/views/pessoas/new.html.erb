@@ -1,0 +1,15 @@
+<!-- app/views/pessoas/new.html.erb -->
+<h1>Adicionar Pessoa</h1>
+
+<%= form_for @pessoa, url: pessoas_path, html: { multipart: true } do |f| %>
+  <!-- Campos do formulário para nome, sobrenome, idade, etc. -->
+  <%= f.text_field :nome, placeholder: "Nome" %>
+  <%= f.text_field :sobrenome, placeholder: "Sobrenome" %>
+  <%= f.number_field :idade, placeholder: "Idade" %>
+  <!-- Campo para upload de arquivo -->
+  <%= f.file_field :arquivo %>
+  <!-- Botão de submissão -->
+  <%= f.submit "Salvar" %>
+  <%= link_to "Voltar", pessoas_path %>
+<% end %>
+
