@@ -1,0 +1,25 @@
+<!-- app/views/pessoas/show.html.erb -->
+<h1>Detalhes da Pessoa</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Arquivo Anexado</th>
+        </tr>
+    </thead>
+    <tr>
+    <td><%= @pessoa.nome %></td>
+    <td><%= @pessoa.sobrenome %></td>
+    <td><%= @pessoa.idade %></td>
+    <td><%= @pessoa.sexo %></td>
+    <td><%= @pessoa.tem_arquivo ? 'Sim' : 'Não' %></td>
+    </tr>
+</table>
+<%= form_for @pessoa, method: :delete, url: pessoa_path(@pessoa) do |f| %>
+  <%= f.submit 'Confirmar Exclusão', data: { confirm: 'Tem certeza?' } %>
+  <%= link_to 'Voltar', pessoas_path, class: 'btn-back' %>
+<% end %>

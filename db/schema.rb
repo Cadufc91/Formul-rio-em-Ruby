@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_13_183626) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_14_145336) do
   create_table "pessoas", force: :cascade do |t|
     t.string "nome"
     t.string "sobrenome"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_13_183626) do
     t.datetime "updated_at", null: false
     t.string "arquivo"
     t.boolean "tem_arquivo"
+    t.string "sexo"
   end
 
 end

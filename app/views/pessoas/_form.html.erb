@@ -1,0 +1,48 @@
+<!-- app/views/pessoas/_form.html.erb -->
+<%= form_for pessoa, url: pessoa.persisted? ? pessoa_path(pessoa) : pessoas_path, html: { method: pessoa.persisted? ? :patch : :post, multipart: true, id: 'edit_pessoa' } do |f| %>
+  <!-- Primeira Linha -->
+  <div class="form1">
+    <div class="form-group">
+      <%= f.label :nome %>
+      <%= f.text_field :nome %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sobrenome %>
+      <%= f.text_field :sobrenome %>
+    </div>
+  </div>
+
+  <!-- Segunda Linha -->
+  <div class="form2">
+    <div class="form-group">
+      <%= f.label :idade %>
+      <%= f.number_field :idade %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sexo %>
+      <div class="radio-btn">
+        <%= f.collection_radio_buttons :sexo, [['Masculino', 'Masculino'], ['Feminino', 'Feminino'], ['Outro', 'outro']], :last, :first %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terceira Linha -->
+  <div class="form3">
+    <div>
+      <%= f.label :arquivo %>
+      <%= f.file_field :arquivo %>
+    </div>
+  </div>
+
+  <!-- Quarta Linha -->
+  <div class="form4">
+    <div class="form-group">
+      <%= link_to 'Voltar', pessoas_path, class: 'btn-back' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit pessoa.persisted? ? "Atualizar" : "Salvar", class: 'btn-save' %>
+    </div>
+  </div>
+<% end %>

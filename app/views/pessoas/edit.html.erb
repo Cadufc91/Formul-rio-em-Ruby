@@ -1,0 +1,16 @@
+<!-- app/views/pessoas/edit.html.erb -->
+<h1>Editar Pessoa</h1>
+
+<%= render 'form', pessoa: @pessoa, remote: true %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('edit_pessoa');
+    form.addEventListener('ajax:success', function(event) {
+      const [data, status, xhr] = event.detail;
+      const responseData = JSON.parse(xhr.response);
+      const updatedRow = document.getElementById(`pessoa_${responseData.id}`);
+      updatedRow.innerHTML = responseData.rowHtml;
+    });
+  });
+</script>

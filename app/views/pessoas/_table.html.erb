@@ -1,0 +1,14 @@
+<!-- app/views/pessoas/_table.html.erb -->
+<% @pessoas.each do |pessoa| %>
+  <tr>
+    <td><%= pessoa.nome %></td>
+    <td><%= pessoa.sobrenome %></td>
+    <td><%= pessoa.idade %></td>
+    <td><%= pessoa.sexo %></td>
+    <td><%= pessoa.tem_arquivo ? 'Sim' : 'Não' %></td>
+    <td>
+      <%= link_to 'Editar', edit_pessoa_path(pessoa) %>
+      <%= link_to 'Deletar', pessoa_path(pessoa), method: :delete, data: { confirm: 'Tem certeza?' } %>
+    </td>
+  </tr>
+<% end %>

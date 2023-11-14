@@ -1,0 +1,12 @@
+<!-- app/views/pessoas/_table_row.html.erb -->
+<tr id="pessoa_<%= pessoa.id %>">
+  <td><%= pessoa.nome %></td>
+  <td><%= pessoa.sobrenome %></td>
+  <td><%= pessoa.idade %></td>
+  <td><%= pessoa.sexo %></td>
+  <td><%= pessoa.tem_arquivo ? 'Sim' : 'Não' %></td>
+  <td>
+    <%= link_to 'Editar', edit_pessoa_path(pessoa) %>
+    <%= link_to 'Deletar', pessoa_path(pessoa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'delete-button' %>
+  </td>
+</tr>
